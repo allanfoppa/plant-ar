@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Augmented reality with AR.js on Udemy</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  </head>
+  <body>
+
+      <h3 class="mt-3 ms-3"> Augmented reality with AR.js
+        <small class="text-muted">on Instituto de pesquisas Eldorado
+        </small>
+      </h3>
+
+      <h5 class="mt-3 ms-3">Examples</h5>
+      <div class="row container-fluid">
+        <div id="my-examples-container" class="list-group list-group-flush col-xs-12 col-sm-12 col-md-6"></div>
+        <div class="col-md-6 my-3">
+          Links of support:
+          <ul id="my-support-list"></ul>
+        </div>
+      </div>
+
+      <h5 class="mt-3 ms-3">Annotations</h5>
+      <div class="row container-fluid">
+        <div id="my-annotations-container" class="list-group list-group-flush col-xs-12"></div>
+      </div>
+
+      <!-- EXAMPLES CONTAINER DATA -->
+      <script>
+
+        const myViews = [
+          {
+            pageName: 'Barcode example',
+            pageLink: 'src/views/barcode.html'
+          },
+          {
+            pageName: 'Plants',
+            pageLink: 'src/views/plants.html'
+          },
+        ]
+
+        const mySupportList = [
+
+        ]
+      </script>
+
+      <script>
+        const annotations = [
+          `vr-mode-ui="enable: false" = Desativa o modo VR`,
+          `arjs="debugUIEnabled: false;" - Desativa o modo debug`,
+          `a-entity camera - Possibilita diversos marcadores`,
+          `a-assets - Carrega os assets da aplicação`,
+          `a-marker present="" - O marcador em que a camera vai ser apontado`,
+          `a-image - A foto ou modelo 3D que vai ser mostrado quando a camera focar no marcador`,
+          `a-assets-item - Para lidar com modelos 3D`,
+        ]
+      </script>
+
+      <!-- POPULATE SCRIPTS -->
+      <script>
+
+        const populateSupportLinks = ({
+          listName,
+          listLinks
+        }) => {
+          let list = document.getElementById(listName)
+
+          for (const iterator of listLinks) {
+            list.insertAdjacentHTML(
+              'afterbegin',
+              `<li>
+                <a href="${iterator}" target="_blank" class="link-dark">
+                  ${iterator}
+                </a>
+              </li>`
+            )
+          }
+        }
+
+        const populateExamplesLinks = ({
+          listName,
+          listViews
+        }) => {
+          let list = document.getElementById(listName)
+
+          for (const iterator of listViews) {
+            list.insertAdjacentHTML(
+              'afterbegin',
+              `<a href="${iterator.pageLink}" class="list-group-item list-group-item-action">
+                ${iterator.pageName}
+              </a>`
+            )
+          }
+        }
+
+        const populateAnnotations = ({
+          listNotes,
+          annotations
+        }) => {
+          let list = document.getElementById(listNotes)
+
+          for (const iterator of annotations) {
+            list.insertAdjacentHTML(
+              'afterbegin',
+              `<span class="list-group-item list-group-item-action">
+                ${iterator}
+              </span>`
+            )
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            populateExamplesLinks ({
+              listName: 'my-examples-container',
+              listViews: myViews
+            })
+            populateSupportLinks ({
+              listName: 'my-support-list',
+              listLinks: mySupportList
+            })
+            populateAnnotations ({
+              listNotes: 'my-annotations-container',
+              annotations
+            })
+        })
+
+      </script>
+  </body>
+</html>

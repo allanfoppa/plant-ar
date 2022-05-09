@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- this line calls aframe -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- this line calls the AR.js component to be used for aframe and finds the source of different assets like the description of 3D objects, the camera calibration-->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+
+  <style>
+    .button {
+     background-color: #4CAF50;
+     border: none;
+     color: white;
+     padding: 7px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 12px;
+     margin: 4px 2px;
+     cursor: pointer;
+     border-radius: 12px;
+     border: 2px solid rgba(9, 148, 28, 0.541);
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+     visibility: hidden;
+   }
+   #change-box {
+     background-color: rgba(0,0,0,0.2);
+     width: 150px;
+     height: 150px;
+     position: relative;
+     top: 25%;
+     left: 50%;
+   }
+  </style>
+
+  <div style="position: relative; top: 250px; width:100%; text-align: center; z-index: 1;">
+    <button class="button" id="btn1"> + </button>
+    <button class="button" id="btn2"> - </button>
+  </div>
+
+  <a-scene
+    vr-mode-ui="enabled: false"
+    embedded arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+    loading-screen="dotsColor: red; backgroundColor: black"
+  >
+    <a-marker type="barcode" value="1">
+      <a-entity
+        text="value: Hello, A-Frame!; color: #000"
+        position="-1 -1 0"
+        rotation="-90 0 0"
+        scale="1.5 1.5 1.5">
+      </a-entity>
+    <a-text
+      value="Hello, World!"
+      position="1 -1 -1"
+      rotation="-90 0 0"
+      id="texto2"
+    ></a-text>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <script>
+
+    document.getElementById("btn1").addEventListener("click", (e) => {
+      var model = document.querySelector('#texto2');
+
+      model.setAttribute("color", "green");
+    })
+
+    document.getElementById("btn2").addEventListener("click", (e) => {
+      var model = document.querySelector('#texto2');
+
+      model.setAttribute("color", "red");
+    })
+
+    var m = document.querySelector("a-marker")
+
+    m.addEventListener("markerFound", (e) => {
+      var btn1 = document.querySelector("#btn1").style.visibility = "visible";
+      var btn2 = document.querySelector("#btn2").style.visibility = "visible";
+      document.querySelector("#change-box").style.visibility = "visible";
+    })
+
+    m.addEventListener("markerLost", (e) => {
+      var btn1 = document.querySelector("#btn1").style.visibility = "hidden";
+      var btn2 = document.querySelector("#btn2").style.visibility = "hidden";
+      document.querySelector("#change-box").style.visibility = "hidden";
+    })
+
+  </script>
+
+</body>
+</html>

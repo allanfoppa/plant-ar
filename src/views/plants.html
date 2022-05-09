@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- this line calls aframe -->
+    <script src="../third-party/aframe.min.js"></script>
+    <!-- this line calls the AR.js component to be used for aframe and finds the source of different assets like the description of 3D objects, the camera calibration-->
+    <script src="../third-party/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0px; overflow: hidden">
+    <!-- au.gmented.com/app/marker/marker.php -->
+
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+    >
+
+      <!--
+        actual source dimensions 1024 768
+        source orientation landscape
+      -->
+
+      <!-- PIMENTA -->
+      <a-marker type="barcode" value="0">
+        <!-- TITLE ENVIRONMENT -->
+        <a-plane
+          position="-1.5 0 -2.8"
+          rotation="-90 0 0"
+          height="0.8"
+          width="2"
+          material="side: double; color: #000; transparent: true; opacity: 0.5"
+        ></a-plane>
+
+        <a-text
+          value="Environment"
+          position="-2.2 0 -3"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="1.2"
+        ></a-text>
+        <a-text
+          value="Last update: 5min"
+          position="-1.9 0 -2.7"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="0.5"
+        ></a-text>
+
+        <!-- ENVIRONMENT WATER LEVEL -->
+        <a-plane
+          position="-1.5 0 -1.8"
+          rotation="-90 0 0"
+          height="1"
+          width="2"
+          material="side: double; color: #000; transparent: true; opacity: 0.5"
+        ></a-plane>
+
+        <a-text
+          value="Water level"
+          position="-2.2 0 -2.1"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="1"
+        ></a-text>
+
+        <a-plane
+          position="-2.3 0 -1.7"
+          rotation="-90 0 0"
+          height="0.1"
+          width="0.1"
+          material="side: double; color: #B9D770;"
+        ></a-plane>
+
+        <a-text
+          value="Optimal"
+          position="-2.2 0 -1.7"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="0.4"
+        ></a-text>
+
+        <a-text
+          value="80%"
+          position="-1.6 0 -1.7"
+          rotation="-90 0 0"
+          color="#B9D770"
+          scale="2"
+        ></a-text>
+
+        <!-- ENVIRONMENT PH LEVEL -->
+        <a-plane
+          position="-1.5 0 -0.7"
+          rotation="-90 0 0"
+          height="1"
+          width="2"
+          material="side: double; color: #000; transparent: true; opacity: 0.5"
+        ></a-plane>
+
+        <a-text
+          value="pH level"
+          position="-2.2 0 -1.0"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="1"
+        ></a-text>
+
+        <a-plane
+          position="-2.3 0 -0.6"
+          rotation="-90 0 0"
+          height="0.1"
+          width="0.1"
+          material="side: double; color: #ffa500;"
+        ></a-plane>
+
+        <a-text
+          value="Medium"
+          position="-2.2 0 -0.6"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="0.4"
+        ></a-text>
+
+        <a-text
+          value="1.4"
+          position="-1.6 0 -0.6"
+          rotation="-90 0 0"
+          color="#ffa500"
+          scale="2"
+        ></a-text>
+
+        <!-- ENVIRONMENT PH LEVEL -->
+        <a-plane
+          position="-1.5 0 0.4"
+          rotation="-90 0 0"
+          height="1"
+          width="2"
+          material="side: double; color: #000; transparent: true; opacity: 0.5"
+        ></a-plane>
+
+        <a-text
+          value="Temperature"
+          position="-2.2 0 0.1"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="1"
+        ></a-text>
+
+        <a-plane
+          position="-2.3 0 0.5"
+          rotation="-90 0 0"
+          height="0.1"
+          width="0.1"
+          material="side: double; color: #c70000;"
+        ></a-plane>
+
+        <a-text
+          value="Needs work"
+          position="-2.2 0 0.5"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="0.4"
+        ></a-text>
+
+        <a-text
+          value="31°C"
+          position="-1.6 0 0.5"
+          rotation="-90 0 0"
+          color="#c70000"
+          scale="2"
+        ></a-text>
+
+      </a-marker>
+
+      <!-- LIMAO -->
+      <a-marker type="barcode" value="1">
+        <a-box color="blue"></a-box>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+
+  </body>
+</html>
