@@ -14,7 +14,9 @@
       embedded
       arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
     >
-
+      <!-- <a-assets>
+        <a-asset-item id="pepper" src="../assets/img/pepper.png"></a-asset-item>
+      </a-assets> -->
       <!--
         actual source dimensions 1024 768
         source orientation landscape
@@ -24,7 +26,7 @@
       <a-marker type="barcode" value="0">
         <!-- TITLE ENVIRONMENT -->
         <a-plane
-          position="-1.5 0 -2.8"
+          position="-2 0 -2.8"
           rotation="-90 0 0"
           height="0.8"
           width="2"
@@ -32,15 +34,15 @@
         ></a-plane>
 
         <a-text
-          value="Environment"
-          position="-2.2 0.1 -3"
+          value="Plant-AR"
+          position="-2.5 0.1 -3"
           rotation="-90 0 0"
           color="#FFF"
           scale="1.2"
         ></a-text>
         <a-text
-          value="Last update: 5min"
-          position="-1.9 0.1 -2.7"
+          value="Atualizado a: 5min"
+          position="-2.5 0.1 -2.7"
           rotation="-90 0 0"
           color="#FFF"
           scale="0.5"
@@ -48,23 +50,24 @@
 
         <!-- ENVIRONMENT WATER LEVEL -->
         <a-plane
-          position="-1.5 0 -1.8"
+          position="-2 0 -1.8"
           rotation="-90 0 0"
           height="1"
           width="2"
           material="side: double; color: #000; transparent: true; opacity: 0.5"
         ></a-plane>
 
+        <!-- TODO: Verificar acentuação UTF-8 -->
         <a-text
-          value="Water level"
-          position="-2.2 0.1 -2.1"
+          value="Umidade do solo"
+          position="-2.8 0.1 -2.1"
           rotation="-90 0 0"
           color="#FFF"
           scale="1"
         ></a-text>
 
         <a-plane
-          position="-2.3 0.1 -1.7"
+          position="-2.8 0.1 -1.7"
           rotation="-90 0 0"
           height="0.1"
           width="0.1"
@@ -72,8 +75,8 @@
         ></a-plane>
 
         <a-text
-          value="Optimal"
-          position="-2.2 0.1 -1.7"
+          value="Otimo"
+          position="-2.7 0.1 -1.7"
           rotation="-90 0 0"
           color="#FFF"
           scale="0.4"
@@ -81,7 +84,7 @@
 
         <a-text
           value="80%"
-          position="-1.6 0.1 -1.7"
+          position="-2.1 0.1 -1.7"
           rotation="-90 0.1 0"
           color="#B9D770"
           scale="2"
@@ -89,7 +92,7 @@
 
         <!-- ENVIRONMENT PH LEVEL -->
         <a-plane
-          position="-1.5 0 -0.7"
+          position="-2 0 -0.7"
           rotation="-90 0 0"
           height="1"
           width="2"
@@ -97,15 +100,15 @@
         ></a-plane>
 
         <a-text
-          value="pH level"
-          position="-2.2 0.1 -1.0"
+          value="pH"
+          position="-2.7 0.1 -1.0"
           rotation="-90 0 0"
           color="#FFF"
           scale="1"
         ></a-text>
 
         <a-plane
-          position="-2.3 0.1 -0.6"
+          position="-2.8 0.1 -0.6"
           rotation="-90 0 0"
           height="0.1"
           width="0.1"
@@ -113,16 +116,16 @@
         ></a-plane>
 
         <a-text
-          value="Medium"
-          position="-2.2 0.1 -0.6"
+          value="Normal"
+          position="-2.7 0.1 -0.6"
           rotation="-90 0 0"
           color="#FFF"
           scale="0.4"
         ></a-text>
 
         <a-text
-          value="1.4"
-          position="-1.6 0.1 -0.6"
+          value="5.5"
+          position="-2.1 0.1 -0.6"
           rotation="-90 0 0"
           color="#ffa500"
           scale="2"
@@ -130,7 +133,7 @@
 
         <!-- ENVIRONMENT PH LEVEL -->
         <a-plane
-          position="-1.5 0 0.4"
+          position="-2 0 0.4"
           rotation="-90 0 0"
           height="1"
           width="2"
@@ -138,15 +141,15 @@
         ></a-plane>
 
         <a-text
-          value="Temperature"
-          position="-2.2 0.1 0.1"
+          value="Temperatura"
+          position="-2.7 0.1 0.1"
           rotation="-90 0 0"
           color="#FFF"
           scale="1"
         ></a-text>
 
         <a-plane
-          position="-2.3 0.1 0.5"
+          position="-2.8 0.1 0.5"
           rotation="-90 0 0"
           height="0.1"
           width="0.1"
@@ -154,8 +157,8 @@
         ></a-plane>
 
         <a-text
-          value="Needs work"
-          position="-2.2 0.1 0.5"
+          value="Inadequado"
+          position="-2.7 0.1 0.5"
           rotation="-90 0 0"
           color="#FFF"
           scale="0.4"
@@ -163,11 +166,46 @@
 
         <a-text
           value="31°C"
-          position="-1.6 0.1 0.5"
+          position="-2.1 0.1 0.5"
           rotation="-90 0 0"
           color="#c70000"
           scale="2"
         ></a-text>
+
+        <!-- PLANT INFO -->
+        <a-plane
+          position="0.1 0 -0.2"
+          rotation="-90 0 0"
+          height="1.5"
+          width="2"
+          material="side: double; color: #000; transparent: true; opacity: 0.8"
+        ></a-plane>
+
+        <a-text
+          value="Pimenta Malagueta"
+          position="-0.7 0.1 -0.7"
+          rotation="-90 0 0"
+          color="#FFF"
+          scale="0.8"
+        ></a-text>
+
+        <a-text
+        value="Harvest date: \n 06/05/2022"
+        position="0.2 0.1 -0.1"
+        rotation="-90 0 0"
+        color="#FFF"
+        scale="0.5"
+      ></a-text>
+
+        <a-image
+        src="../assets/img/pepper.png"
+        position="-0.4 0.6 0"
+        rotation="-90 0 0"
+        height="0.6"
+        width="0.6"
+        ></a-image>
+
+
 
       </a-marker>
 
