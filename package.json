@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "aframe-watcher": "^1.4.0"
+  },
+  "name": "plant-ar",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "watch-app": "aframe-watcher ./index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allanfoppa/plant-ar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allanfoppa/plant-ar/issues"
+  },
+  "homepage": "https://github.com/allanfoppa/plant-ar#readme"
+}
