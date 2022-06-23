@@ -27,7 +27,7 @@
 
       <ul class="nav__list">
         <li
-          id="tasks"
+          id="menu-tasks"
           class="nav__item"
         >
           <span class="nav__link">
@@ -45,11 +45,11 @@
       arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
     >
 
-      <!-- PIMENTA -->
+      <!-- CODE 0 -->
       <a-marker
         type="barcode"
         value="0"
-        id="pepper" scale="1.0000000262214361 0.9999999858212086 0.9999999997919302" rotation="91.49051699158122 -0.7630757554795878 -2.934130275484706" position="0.6715294199381249 -1.04649255300443 -6.238684762919372"
+        id="pepper" scale="0.9999999981701025 0.9999999956610823 0.9999999933779674" rotation="77.65241100390722 9.278503553445427 10.32665791372135" position="-0.3373484084256686 0.3862193533748475 -7.647685390594773"
       >
         <!-- TITLE ENVIRONMENT -->
         <a-entity
@@ -118,6 +118,165 @@
 
         </a-entity>
 
+        <!-- ENVIRONMENT pH LEVEL -->
+        <a-entity
+          position="-2 0 -0.8"
+          id="ph-level-component"
+          geometry="primitive: plane; height: 1; width: 2" material="color: #000; shader: standard; visible: true; transparent: false; blending: normal; depthTest: true; depthWrite: true; opacity: 0.48"
+          rotation="-90 0 0"
+          height="0.8"
+          width="5"
+        >
+          <a-text
+            value="pH"
+            rotation="0 0 0"
+            color="#FFF"
+            scale="1"
+            id="ph-level-title" position="0 0.2 0" text="align: center; anchor: center; baseline: bottom; side: front"
+          ></a-text>
+
+          <a-plane
+            rotation="0 0 0"
+            height="0.1"
+            width="0.1"
+            material="side: double; color: #ffa500;"
+            id="ph-level-status" position="-0.73 0 0.1"
+          ></a-plane>
+
+          <a-text
+            value="Acido"
+            rotation="0 0 0"
+            color="#FFF"
+            scale="1 1 1"
+            id="ph-level-text-status" text="width: 4" position="-0.66 0 0"
+          ></a-text>
+
+          <a-text
+            value="5"
+            rotation="0 0.1 0"
+            color="#ffa500"
+            scale="1 1 1"
+            id="ph-level-status-percentage" text="align: left; anchor: align; width: 9" position="0 -0.1 0.1"
+          ></a-text>
+
+        </a-entity>
+
+        <!-- ENVIRONMENT TEMPERATURE LEVEL -->
+        <a-entity
+          position="-2 0 0.3"
+          id="temperature-level-component"
+          geometry="primitive: plane; height: 1; width: 2" material="color: #000; shader: standard; visible: true; transparent: false; blending: normal; depthTest: true; depthWrite: true; opacity: 0.48"
+          rotation="-90 0 0"
+          height="0.8"
+          width="5"
+        >
+          <a-text
+            value="Temperatura"
+            rotation="0 0 0"
+            color="#FFF"
+            scale="1"
+            id="temperature-level-title" position="0 0.2 0" text="align: center; anchor: center; baseline: bottom; side: front"
+          ></a-text>
+
+          <a-plane
+            rotation="0 0 0"
+            height="0.1"
+            width="0.1"
+            material="side: double; color: #c70000;"
+            id="temperature-level-status" position="-0.73 0 0.1"
+          ></a-plane>
+
+          <a-text
+            value="Quente"
+            rotation="0 0 0"
+            color="#FFF"
+            scale="1 1 1"
+            id="temperature-level-text-status" text="width: 4" position="-0.66 0 0"
+          ></a-text>
+
+          <a-text
+            value="36ºC"
+            rotation="0 0.1 0"
+            color="#c70000"
+            scale="1 1 1"
+            id="temperature-level-status-percentage" text="align: left; anchor: align; width: 9" position="0 -0.1 0.1"
+          ></a-text>
+
+        </a-entity>
+
+        <!-- PLANT INFO -->
+        <a-entity
+          position="0.3 0 -0.24"
+          id="plant-info-component"
+          geometry="primitive: plane; height: 2.1; width: 2.2" material="color: #000; shader: standard; visible: true; transparent: false; blending: normal; depthTest: true; depthWrite: true; opacity: 0.48"
+          rotation="-90 0 0"
+          height="0.8"
+          width="5"
+        >
+          <a-text
+            value="Pimenta Malagueta"
+            position="-0.37 0.77 0"
+            rotation="0 0 0"
+            color="#FFF"
+            scale="0.8"
+            id="plant-info-name" text="width: 4"
+          ></a-text>
+
+          <a-text
+            value="Previsão de colheita: \n DD/MM/AAAA"
+            position="-0.35 0.38 0"
+            rotation="0 0 0"
+            color="#FFF"
+            scale="0.5"
+            id="plant-info-harvest"
+          ></a-text>
+
+          <a-image
+            src="./src/assets/img/pepper.png"
+            position="-0.72 0.49 0.01"
+            rotation="0 0 0"
+            height="0.6"
+            width="0.6"
+            id="plant-info-image" geometry="height: 0.66"
+          ></a-image>
+
+        </a-entity>
+
+        <!-- TITLE TASKS -->
+        <a-entity
+          position="2.6 0 -3"
+          id="tasks-component"
+          geometry="primitive: plane; height: 1; width: 2" material="color: #000; shader: standard; visible: true; transparent: false; blending: normal; depthTest: true; depthWrite: true; opacity: 1"
+          rotation="-90 0 0"
+          height="0.8"
+          width="5"
+        >
+          <a-text
+            value="Tarefas"
+            color="#FFF"
+            scale="1.2 1 1"
+            id="tasks-title" text="align: center; anchor: center; baseline: bottom"
+          ></a-text>
+          <a-text
+            value="Hoje"
+            color="#FFF"
+            scale="1 1 1"
+            id="tasks-today-text" position="0 -0.1 0" text="align: center; anchor: center; baseline: top; width: 4"
+          ></a-text>
+        </a-entity>
+
+        <!-- TASK LIST -->
+        <a-entity
+          position="2.6 0 -0.8"
+          rotation="-90 0 0"
+          height="3"
+          width="2"
+          geometry="primitive: plane; height: 3.21; width: 2" material="color: #000; shader: standard; visible: true; transparent: false; blending: normal; depthTest: true; depthWrite: true; opacity: 0.48"
+          id="tasks-list-component"
+        >
+
+          <a-entity id="todo-list" />
+        </a-entity>
 
       </a-marker>
 
@@ -125,25 +284,25 @@
       <a-entity camera></a-entity>
     </a-scene>
 
-    <!-- <script>
+    <script>
       let list = document.getElementById('todo-list')
 
       list.insertAdjacentHTML(
         'beforeEnd',
-        "<a-plane position=\"1.4 0.1 -2.0\" rotation=\"-90 0 0\" height=\"0.1\" width=\"0.1\" material=\"side: double; color: #c70000;\"></a-plane><a-text value=\"Regar as plantas!\" scale=\"0.3\" position=\"1.5 0.1 -2.0\" rotation=\"-90 0 0\"></a-text>"
+        "<a-plane position=\"-0.820 1.400 0.010\" rotation=\"0 0 0\" height=\"0.1\" width=\"0.1\" material=\"side: double; color: #c70000;\"></a-plane><a-text value=\"Regar as plantas\" scale=\"0.4\" position=\"-0.680 1.400 0.010\" rotation=\"0 0 0\"></a-text>"
       )
       list.insertAdjacentHTML(
         'beforeEnd',
-        "<a-plane position=\"1.4 0.1 -1.7\" rotation=\"-90 0 0\" height=\"0.1\" width=\"0.1\" material=\"side: double; color: #ffa500;\"></a-plane><a-text value=\"Colher maças!\" scale=\"0.3\" position=\"1.5 0.1 -1.7\" rotation=\"-90 0 0\"></a-text>"
+        "<a-plane position=\"-0.820 1.200 0.010\" rotation=\"0 0 0\" height=\"0.1\" width=\"0.1\" material=\"side: double; color: #ffa500;\"></a-plane><a-text value=\"Colher maças\" scale=\"0.4\" position=\"-0.680 1.200 0.010\" rotation=\"0 0 0\"></a-text>"
       )
     </script>
 
     <script>
-      let tasks = document.getElementById('tasks')
-      let tasksTitle = document.getElementById('tasks-title')
-      let tasksList = document.getElementById('tasks-list')
+      let tasks = document.getElementById('menu-tasks')
+      let tasksTitle = document.getElementById('tasks-component')
+      let tasksList = document.getElementById('tasks-list-component')
 
-      let status = document.querySelector('#tasks > span > span')
+      let status = document.querySelector('#menu-tasks > span > span')
 
       tasks.addEventListener('click', (e) => {
 
@@ -178,7 +337,7 @@
         document.querySelector('.burger').classList.toggle('burger--active')
         document.querySelector('.nav__list').classList.toggle('nav__list--active')
       }, false)
-    </script> -->
+    </script>
 
     <script src="./src/third-party/a-frame/aframe-inspector.js"></script>
   </body>
