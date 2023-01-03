@@ -1,0 +1,9 @@
+{
+  "liveServer.settings.https":
+  {
+    "enable": true, //set it true to enable the feature.
+    "cert": "C:/Users/allan.fagundes/Documents/My_Apps/geology-vr-for-oil-and-gas-training/.vscode/example.crt", //full path of the certificate
+    "key": "C:/Users/allan.fagundes/Documents/My_Apps/geology-vr-for-oil-and-gas-training/.vscode/example.key", //full path of the private key
+    "passphrase": "12345"
+  }
+}
